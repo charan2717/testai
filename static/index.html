@@ -623,7 +623,7 @@ function handleFiles(files) {
     const formData = new FormData();
     formData.append('image', file);
 
-    fetch('https://ai-0jiu.onrender.com/upload', {
+    fetch('https://ai-0jiu.onrender.com/', {
         method: 'POST',
         body: formData
     })
