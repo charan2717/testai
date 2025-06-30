@@ -528,16 +528,18 @@
                 chatbox.appendChild(loadingMessage);
                 chatbox.scrollTop = chatbox.scrollHeight;
 
-                try {
-                    const response = await fetch("/chat", {
-                        method: "POST",
-                        headers: {
-                            "Content-Type": "application/json"
+                const BASE_URL = "https://ai-0jiu.onrender.com";
+
+                const response = await fetch(`${BASE_URL}/chat`, {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json"
                         },
                         body: JSON.stringify({
-                            message: userMessage
+                        message: userMessage
                         })
                     });
+
                     const data = await response.json();
 
                     chatbox.removeChild(loadingMessage);
