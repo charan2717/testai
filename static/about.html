@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - AI Chat</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f5f5f5;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            width: 80%;
+            margin: auto;
+            max-width: 800px;
+            padding: 20px;
+            background: white;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            margin-top: 50px;
+        }
+
+        h1 {
+            text-align: center;
+            color: #007bff;
+        }
+
+        p {
+            line-height: 1.6;
+            font-size: 18px;
+        }
+
+        .highlight {
+            background: #007bff;
+            color: white;
+            padding: 5px 10px;
+            border-radius: 5px;
+            font-weight: bold;
+        }
+
+        pre {
+            background: #272822;
+            color: #f8f8f2;
+            padding: 10px;
+            border-radius: 5px;
+            overflow-x: auto;
+        }
+
+        code {
+            font-family: "Courier New", monospace;
+        }
+
+        .back-btn {
+            display: block;
+            text-align: center;
+            margin-top: 20px;
+            text-decoration: none;
+            background: #007bff;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+        }
+
+        .back-btn:hover {
+            background: #0056b3;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>About Our AI Chat</h1>
+        <p>Welcome to our AI-powered chatbot named Base! This project is designed to provide a smooth, intelligent, and interactive chat experience.</p>
+
+        <h2>🌍 How Does Our API Work?</h2>
+        <p>We use a simple yet powerful approach to generate responses. The backend is built using <span class="highlight">Flask</span>, and we connect to an AI model API to handle user queries.</p>
+        
+        <h3>🛠 API Workflow:</h3>
+        <p>When a user sends a message, our backend:</p>
+        <ol>
+            <li>Receives the message via a Flask API endpoint.</li>
+            <li>Sends the message to an AI model (e.g., meta-llama).</li>
+            <li>Processes the response and sends it back to the frontend.</li>
+            <li>Once you refresh the page the chat history will be gone.</li>
+        </ol>
+
+        <h3>🚀 Example API Call:</h3>
+        <pre>
+<code>import requests
+
+API_KEY = "YOUR_API_KEY"
+API_URL = "https://api.together.xyz/v1/chat/completions"
+HEADERS = {
+    "Authorization": "Bearer YOUR_API_KEY",
+    "Content-Type": "application/json"
+}
+DATA = {
+    "model": "meta-llama/Llama-3.3-70B-Instruct-Turbo",
+    "messages": [{"role": "user", "content": "Hello, Base!"}]
+}
+
+response = requests.post(API_URL, headers=HEADERS, json=DATA)
+print(response.json())</code>
+        </pre>
+
+        <h2>🔑 Where Did We Get the API Key?</h2>
+        <p>We currently use Together API for generating responses. You can get your own API key from <a href="https://www.together.ai/" target="_blank">TogetherAI's platform</a>. In the future, we aim to develop our own fine-tuned models to reduce dependency on external services.</p>
+
+        <h2>📈 Future Plans</h2>
+        <ul>
+            <li>🎯 Train our own AI model for more customized responses.</li>
+            <li>🔊 Add voice interaction with speech recognition.</li>
+            <li>📚 Enhance the knowledge base for domain-specific AI assistance.</li>
+            <li>💡 Improve response speed with optimized caching.</li>
+        </ul>
+
+        <a href="index.html" class="back-btn">⬅ Back to Chat</a>
+    </div>
+
+</body>
+</html>
